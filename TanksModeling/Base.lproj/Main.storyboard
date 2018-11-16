@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uqe-vF-Pop">
+    <device id="retina5_5" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Настройки-->
+        <scene sceneID="5QU-yj-G98">
+            <objects>
+                <viewController id="cpI-Ql-Zhh" customClass="SettingsViewController" customModule="TanksModeling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6pm-KX-KNs">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-IB-RhM">
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCellIdentifier" id="26f-Lt-AEg" customClass="SettingTableViewCell" customModule="TanksModeling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="736" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="26f-Lt-AEg" id="sKF-9E-54f">
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0tc-IB-RhM" firstAttribute="top" secondItem="k2x-YI-PTG" secondAttribute="top" id="OrH-WO-prc"/>
+                            <constraint firstItem="k2x-YI-PTG" firstAttribute="trailing" secondItem="0tc-IB-RhM" secondAttribute="trailing" id="i2V-le-mFD"/>
+                            <constraint firstItem="k2x-YI-PTG" firstAttribute="bottom" secondItem="0tc-IB-RhM" secondAttribute="bottom" id="nEV-h1-tZu"/>
+                            <constraint firstItem="0tc-IB-RhM" firstAttribute="leading" secondItem="k2x-YI-PTG" secondAttribute="leading" id="pzU-wX-eCB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k2x-YI-PTG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Настройки" id="CDZ-2D-prf">
+                        <barButtonItem key="rightBarButtonItem" title="Вооружение" id="sq9-up-S9c">
+                            <connections>
+                                <segue destination="epZ-Ef-9A6" kind="show" identifier="segueToArmamentA" id="Bzd-aQ-aOx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="settingsTableView" destination="0tc-IB-RhM" id="rG2-MU-VM7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l00-XY-z2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809.51086956521749" y="-694.20289855072474"/>
+        </scene>
+        <!--Сторона А-->
+        <scene sceneID="x3j-GW-Xoc">
+            <objects>
+                <viewController id="epZ-Ef-9A6" customClass="ArmamentViewController" customModule="TanksModeling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVR-Jj-TCj">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJ9-zO-qJt">
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepperTableViewCellIdentifier" rowHeight="66" id="a5t-OB-b1J" customClass="StepperTableViewCell" customModule="TanksModeling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="736" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a5t-OB-b1J" id="tW8-YL-Mcs">
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="65.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lM5-07-Foo">
+                                                    <rect key="frame" x="622" y="18.333333333333329" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged:" destination="a5t-OB-b1J" eventType="valueChanged" id="Pyu-fa-NEb"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1m-s1-cMK">
+                                                    <rect key="frame" x="594.33333333333337" y="21" width="12.666666666666629" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lM5-07-Foo" firstAttribute="centerY" secondItem="tW8-YL-Mcs" secondAttribute="centerY" id="2GV-Sv-apf"/>
+                                                <constraint firstItem="s1m-s1-cMK" firstAttribute="centerY" secondItem="lM5-07-Foo" secondAttribute="centerY" id="8W6-wA-Lw7"/>
+                                                <constraint firstItem="lM5-07-Foo" firstAttribute="leading" secondItem="s1m-s1-cMK" secondAttribute="trailing" constant="15" id="ILG-hF-IeP"/>
+                                                <constraint firstAttribute="trailing" secondItem="lM5-07-Foo" secondAttribute="trailing" constant="20" id="sgG-KC-CoN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countLabel" destination="s1m-s1-cMK" id="BHr-3t-ago"/>
+                                            <outlet property="countStepper" destination="lM5-07-Foo" id="Jr7-in-W3n"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KJ9-zO-qJt" firstAttribute="leading" secondItem="T93-vK-x0z" secondAttribute="leading" id="9Aw-Gu-7gm"/>
+                            <constraint firstItem="T93-vK-x0z" firstAttribute="bottom" secondItem="KJ9-zO-qJt" secondAttribute="bottom" id="XaK-uh-Hjr"/>
+                            <constraint firstItem="T93-vK-x0z" firstAttribute="trailing" secondItem="KJ9-zO-qJt" secondAttribute="trailing" id="pyP-6R-7vF"/>
+                            <constraint firstItem="KJ9-zO-qJt" firstAttribute="top" secondItem="T93-vK-x0z" secondAttribute="top" id="qe3-MQ-Sls"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T93-vK-x0z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Сторона А" id="ILb-vg-6Da">
+                        <barButtonItem key="rightBarButtonItem" title="Далее" id="nde-Z3-QJR">
+                            <connections>
+                                <segue destination="2WI-qd-Gvu" kind="show" identifier="segueToArmamentB" id="1Iz-K8-KAQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="armamentTableView" destination="KJ9-zO-qJt" id="qod-c2-WZE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLL-hj-Llw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="-693"/>
+        </scene>
+        <!--Моделирование-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ModelingViewController" customModule="TanksModeling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLK-ZK-ygN">
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-A4-Wmm">
+                                        <rect key="frame" x="0.0" y="0.0" width="736" height="370"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lwd-A4-Wmm" secondAttribute="trailing" id="56k-ln-Z2c"/>
+                                    <constraint firstItem="lwd-A4-Wmm" firstAttribute="top" secondItem="dLK-ZK-ygN" secondAttribute="top" id="K1R-DE-O0f"/>
+                                    <constraint firstItem="lwd-A4-Wmm" firstAttribute="leading" secondItem="dLK-ZK-ygN" secondAttribute="leading" id="QeN-DF-PzP"/>
+                                    <constraint firstAttribute="bottom" secondItem="lwd-A4-Wmm" secondAttribute="bottom" id="jOt-7y-ZKh"/>
+                                </constraints>
+                            </scrollView>
+                            <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iet-56-80Z">
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dLK-ZK-ygN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1TD-nm-yEP"/>
+                            <constraint firstItem="Iet-56-80Z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2y8-sc-SgT"/>
+                            <constraint firstItem="dLK-ZK-ygN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7yL-ah-9nJ"/>
+                            <constraint firstItem="lwd-A4-Wmm" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="DUd-2x-sfC"/>
+                            <constraint firstItem="Iet-56-80Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UsD-Ts-BaI"/>
+                            <constraint firstItem="dLK-ZK-ygN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dyf-vO-X6a"/>
+                            <constraint firstItem="dLK-ZK-ygN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o7b-8I-Eae"/>
+                            <constraint firstItem="Iet-56-80Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rI5-NY-lzN"/>
+                            <constraint firstItem="Iet-56-80Z" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uhT-EN-G0Q"/>
+                            <constraint firstItem="lwd-A4-Wmm" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="vT5-wc-t8G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Моделирование" id="jV8-xI-BzE">
+                        <barButtonItem key="rightBarButtonItem" title="Shoot" id="Hrw-jS-OIO">
+                            <connections>
+                                <action selector="shootButton:" destination="BYZ-38-t0r" id="1C8-hp-8UL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sceneBackgroundView" destination="lwd-A4-Wmm" id="o5o-Wb-m7U"/>
+                        <outlet property="sceneHeightConstraint" destination="DUd-2x-sfC" id="PJ5-xK-kjr"/>
+                        <outlet property="sceneLightView" destination="Iet-56-80Z" id="OUf-up-dsD"/>
+                        <outlet property="scrollView" destination="dLK-ZK-ygN" id="GEb-hV-Mi7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2213" y="206"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ugg-S5-yQG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uqe-vF-Pop" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X4G-op-tqA">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cpI-Ql-Zhh" kind="relationship" relationship="rootViewController" id="aDV-cE-OiP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTS-Yv-bQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="-1594"/>
+        </scene>
+        <!--Сторона В-->
+        <scene sceneID="QrS-jX-HWq">
+            <objects>
+                <viewController id="2WI-qd-Gvu" customClass="ArmamentViewController" customModule="TanksModeling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WlW-xQ-Zns">
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQk-1A-3yb">
+                                <rect key="frame" x="0.0" y="44" width="736" height="370"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepperTableViewCellIdentifier" rowHeight="66" id="5Xj-yZ-HcI" customClass="StepperTableViewCell" customModule="TanksModeling" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="736" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Xj-yZ-HcI" id="W7M-5P-FiW">
+                                            <rect key="frame" x="0.0" y="0.0" width="736" height="65.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="cvy-8w-0pg">
+                                                    <rect key="frame" x="622" y="18.333333333333329" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged:" destination="5Xj-yZ-HcI" eventType="valueChanged" id="RnM-1i-IE3"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c5-98-boy">
+                                                    <rect key="frame" x="594.33333333333337" y="21" width="12.666666666666629" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="cvy-8w-0pg" secondAttribute="trailing" constant="20" id="5XR-aV-auv"/>
+                                                <constraint firstItem="cvy-8w-0pg" firstAttribute="leading" secondItem="9c5-98-boy" secondAttribute="trailing" constant="15" id="Nq3-Xh-t6s"/>
+                                                <constraint firstItem="cvy-8w-0pg" firstAttribute="centerY" secondItem="W7M-5P-FiW" secondAttribute="centerY" id="kLi-cs-c2q"/>
+                                                <constraint firstItem="9c5-98-boy" firstAttribute="centerY" secondItem="cvy-8w-0pg" secondAttribute="centerY" id="n98-cM-xhY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countLabel" destination="9c5-98-boy" id="0Mc-8p-0r9"/>
+                                            <outlet property="countStepper" destination="cvy-8w-0pg" id="a2m-6Y-97E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1bt-6a-bh7" firstAttribute="bottom" secondItem="AQk-1A-3yb" secondAttribute="bottom" id="HsD-2f-9ov"/>
+                            <constraint firstItem="AQk-1A-3yb" firstAttribute="top" secondItem="1bt-6a-bh7" secondAttribute="top" id="Rab-Xa-CAa"/>
+                            <constraint firstItem="AQk-1A-3yb" firstAttribute="leading" secondItem="1bt-6a-bh7" secondAttribute="leading" id="a4K-iC-Z6R"/>
+                            <constraint firstItem="1bt-6a-bh7" firstAttribute="trailing" secondItem="AQk-1A-3yb" secondAttribute="trailing" id="ktR-So-KNE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1bt-6a-bh7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Сторона В" id="qoN-gP-tle">
+                        <barButtonItem key="rightBarButtonItem" title="Моделирование" id="l7b-6e-bqY">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="segueToModeling" id="knk-FB-lfI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="armamentTableView" destination="AQk-1A-3yb" id="wGk-yA-Ztb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkg-YM-AEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="-694"/>
+        </scene>
+    </scenes>
+</document>
