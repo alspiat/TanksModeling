@@ -38,28 +38,50 @@ extension ArmamentViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StepperTableViewCell.identifier) as! StepperTableViewCell
         
         guard let armamentSettings = settingsModel?.armamentSettings[settingsKey] else {
-            return cell
+            return UITableViewCell()
         }
-        
         
         let settingHeader: String = armamentSettings.keys.sorted()[indexPath.section]
         
         if let settingTitle: String = armamentSettings[settingHeader]?.keys.sorted()[indexPath.row],
             let settingValue: Int = armamentSettings[settingHeader]?[settingTitle] {
-            cell.textLabel?.text = settingTitle
-            cell.countLabel.text = "\(settingValue)"
-            cell.countStepper.value = Double(settingValue)
             
-            cell.settingsModel = settingsModel
-            cell.settingHeader = settingHeader
-            cell.settingsKey = settingsKey
+            if settingHeader.contains("рубеж") {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldTableViewCell.identifier) as! TextFieldTableViewCell
+                
+                cell.textLabel?.text = settingTitle
+                cell.countTextField.text = "\(settingValue)"
+                
+                cell.settingsModel = settingsModel
+                cell.settingHeader = settingHeader
+                cell.settingsKey = settingsKey
+                
+                return cell
+                
+            } else {
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: StepperTableViewCell.identifier) as! StepperTableViewCell
+                
+                cell.textLabel?.text = settingTitle
+                cell.countLabel.text = "\(settingValue)"
+                cell.countStepper.value = Double(settingValue)
+                
+                cell.settingsModel = settingsModel
+                cell.settingHeader = settingHeader
+                cell.settingsKey = settingsKey
+                
+                return cell
+            }
             
         }
         
-        return cell
+        return UITableViewCell()
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

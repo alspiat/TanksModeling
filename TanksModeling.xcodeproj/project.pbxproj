@@ -20,6 +20,7 @@
 		AAB7D211219875F600EB8F40 /* SettingsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */; };
 		AABAA5442199B52000A036AA /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAA5432199B52000A036AA /* TankView.swift */; };
 		AABAA5482199BDED00A036AA /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAA5472199BDED00A036AA /* StepperTableViewCell.swift */; };
+		AAF19DB3219EFB38001BFE51 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF19DB2219EFB38001BFE51 /* TextFieldTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TableView.swift"; sourceTree = "<group>"; };
 		AABAA5432199B52000A036AA /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
 		AABAA5472199BDED00A036AA /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
+		AAF19DB2219EFB38001BFE51 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				AAB7D20C21985B8100EB8F40 /* SettingTableViewCell.swift */,
 				AABAA5472199BDED00A036AA /* StepperTableViewCell.swift */,
+				AAF19DB2219EFB38001BFE51 /* TextFieldTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				AAB7D20D21985B8100EB8F40 /* SettingTableViewCell.swift in Sources */,
 				9ADD1442219ACFB500668263 /* ArmamentViewController.swift in Sources */,
 				AAB7D1FC2198555800EB8F40 /* ModelingViewController.swift in Sources */,
+				AAF19DB3219EFB38001BFE51 /* TextFieldTableViewCell.swift in Sources */,
 				AAB7D1FA2198555800EB8F40 /* AppDelegate.swift in Sources */,
 				9ADD1451219AF17B00668263 /* SettingsModel.swift in Sources */,
 				AAB7D211219875F600EB8F40 /* SettingsViewController+TableView.swift in Sources */,

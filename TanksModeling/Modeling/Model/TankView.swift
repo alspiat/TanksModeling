@@ -40,12 +40,18 @@ class TankView: UIImageView {
             let positionAnimation = CABasicAnimation(keyPath: "position")
             positionAnimation.fromValue = NSValue(cgPoint: fromPoint)
             positionAnimation.toValue = NSValue(cgPoint: toPoint)
-            positionAnimation.duration = 3
+            positionAnimation.duration = CFTimeInterval(abs(offset / 50.0))
             
             view.layer.add(positionAnimation, forKey: movingAnimationKey)
         }
         
         self.layer.position = toPoint
+    }
+    
+    func die() {
+        self.layer.removeAnimation(forKey: movingAnimationKey)
+        self.layer.position = self.layer.presentation()!.position
+        self.alpha = 0.5
     }
 
 }

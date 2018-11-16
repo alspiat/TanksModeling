@@ -10,11 +10,12 @@ import UIKit
 
 class ModelingViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var sceneScrollView: UIScrollView!
     @IBOutlet weak var sceneBackgroundView: UIImageView!
     @IBOutlet weak var sceneLightView: UIView!
     
     @IBOutlet weak var sceneHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var sceneWidthConstraint: NSLayoutConstraint!
     
     var settingsModel: SettingsModel?
     
@@ -28,6 +29,8 @@ class ModelingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(settingsModel?.armamentSettings)
         
         if let tanksASetting = settingsModel?.armamentSettings["Armament A"]?["Танки"],
             let tanksBSetting = settingsModel?.armamentSettings["Armament B"]?["Танки"],
@@ -61,7 +64,7 @@ class ModelingViewController: UIViewController {
     }
     
     @IBAction func shootButton(_ sender: UIBarButtonItem) {
-        tanksA[0].shoot(animated: true)
+        tanksA[0].die()
     }
     
     func configure(tanks: inout [TankView], with settings: [String: Int]) {
@@ -99,6 +102,12 @@ class ModelingViewController: UIViewController {
 
     func configureScene(settings: [String: String]) {
         
+        let sceneWidth = max(endPointA, startPointB)
+        
+        if sceneWidth > sceneScrollView.bounds.width {
+            sceneWidthConstraint.constant = sceneWidth - sceneScrollView.bounds.width
+        }
+        
         if let landscape = settings["Ландшафт"] {
             sceneBackgroundView.image = UIImage(named: landscape)
         }
@@ -117,14 +126,14 @@ class ModelingViewController: UIViewController {
         var contentSizeB: CGFloat = 0
 
         for tank in tanksA {
-            scrollView.addSubview(tank)
+            sceneScrollView.addSubview(tank)
             tank.frame.origin.x = x
             tank.frame.origin.y = y
 
             y += offset + tank.frame.size.height
             
-            if y > scrollView.bounds.height {
-                contentSizeA = y - scrollView.bounds.height
+            if y > sceneScrollView.bounds.height {
+                contentSizeA = y - sceneScrollView.bounds.height
             }
         }
 
@@ -132,15 +141,15 @@ class ModelingViewController: UIViewController {
         x = startPointB
 
         for tank in tanksB {
-            scrollView.addSubview(tank)
+            sceneScrollView.addSubview(tank)
             tank.frame.origin.x = x
             tank.frame.origin.y = y
             tank.transform = CGAffineTransform(rotationAngle: (.pi))
 
             y += offset + tank.frame.size.height
 
-            if y > scrollView.bounds.height {
-                contentSizeB = y - scrollView.bounds.height
+            if y > sceneScrollView.bounds.height {
+                contentSizeB = y - sceneScrollView.bounds.height
             }
 
         }

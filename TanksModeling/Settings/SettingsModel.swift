@@ -37,7 +37,7 @@ class SettingsModel {
             "Начальный рубеж":
                 ["X": 600],
             "Конечный рубеж":
-                ["X": 400]]
+                ["X": 300]]
     ]
     
     var sceneSettings: [String: String] = [
