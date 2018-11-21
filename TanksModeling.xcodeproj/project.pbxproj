@@ -10,6 +10,7 @@
 		9ADD1442219ACFB500668263 /* ArmamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1441219ACFB500668263 /* ArmamentViewController.swift */; };
 		9ADD1444219ACFCA00668263 /* ArmamentViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */; };
 		9ADD1451219AF17B00668263 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1450219AF17B00668263 /* SettingsModel.swift */; };
+		9AFFD19421A5433B00F0F2A8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFFD19321A5433B00F0F2A8 /* WelcomeViewController.swift */; };
 		AAB7D1FA2198555800EB8F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB7D1F92198555800EB8F40 /* AppDelegate.swift */; };
 		AAB7D1FC2198555800EB8F40 /* ModelingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB7D1FB2198555800EB8F40 /* ModelingViewController.swift */; };
 		AAB7D1FF2198555800EB8F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB7D1FD2198555800EB8F40 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		9ADD1441219ACFB500668263 /* ArmamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmamentViewController.swift; sourceTree = "<group>"; };
 		9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArmamentViewController+TableView.swift"; sourceTree = "<group>"; };
 		9ADD1450219AF17B00668263 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		9AFFD19321A5433B00F0F2A8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		AAB7D1F62198555800EB8F40 /* TanksModeling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TanksModeling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAB7D1F92198555800EB8F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAB7D1FB2198555800EB8F40 /* ModelingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelingViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */,
 				9ADD1441219ACFB500668263 /* ArmamentViewController.swift */,
 				9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */,
+				9AFFD19321A5433B00F0F2A8 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				AAB7D1FA2198555800EB8F40 /* AppDelegate.swift in Sources */,
 				9ADD1451219AF17B00668263 /* SettingsModel.swift in Sources */,
 				AAB7D211219875F600EB8F40 /* SettingsViewController+TableView.swift in Sources */,
+				9AFFD19421A5433B00F0F2A8 /* WelcomeViewController.swift in Sources */,
 				9ADD1444219ACFCA00668263 /* ArmamentViewController+TableView.swift in Sources */,
 				AAB7D20F21985B9600EB8F40 /* SettingsViewController.swift in Sources */,
 			);

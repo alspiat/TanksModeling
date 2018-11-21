@@ -20,6 +20,9 @@ class ArmamentViewController: UIViewController {
         
         armamentTableView.delegate = self
         armamentTableView.dataSource = self
+        
+        view.backgroundColor = #colorLiteral(red: 0.4605119824, green: 0.4856187105, blue: 0.4202735126, alpha: 1)
+        armamentTableView.backgroundColor = .clear
 
         // Do any additional setup after loading the view.
     }
