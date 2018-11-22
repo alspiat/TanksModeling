@@ -14,13 +14,27 @@ class TankView: UIImageView {
     fileprivate let movingAnimationKey = "movingAnimation"
     
 
+    var HpLabel = UILabel()
+    
     var tankHP: Int = 0 {
         didSet {
             checkDie()
+            HpLabel.text = "\(String(tankHP)) HP"
         }
     }
     var tankRate: Int = 0
     
+   
+    
+    func drawHP() {
+        HpLabel = UILabel(frame: CGRect(x: 15, y: self.image?.size.height ?? 0, width: 30, height: 10))
+        HpLabel.textAlignment = .center //For center alignment
+        HpLabel.text = "\(String(tankHP)) HP"
+        HpLabel.textColor = .white
+        HpLabel.font = UIFont.systemFont(ofSize: 12)
+        HpLabel.sizeToFit()//If required
+        self.addSubview(HpLabel)
+    }
     
     func shoot(animated: Bool, tanks: [TankView]) {
         if animated {
@@ -36,6 +50,8 @@ class TankView: UIImageView {
             animation.keyPath = "position"
             animation.values = pathArray
             animation.duration = 0.2
+     
+          
             
             //Если тунк живой
             if self.tankHP > 0 {
@@ -89,6 +105,7 @@ class TankView: UIImageView {
     //Проверяем умер ли  танк, если да, то  обнуляем рейт
     func checkDie() {
         if tankHP <= 0 {
+            HpLabel.isHidden = true
             self.layer.removeAnimation(forKey: movingAnimationKey)
             self.layer.removeAnimation(forKey: shootingAnimationKey)
             self.layer.position = self.layer.presentation()!.position
@@ -97,4 +114,5 @@ class TankView: UIImageView {
         }
     }
 
+   
 }
