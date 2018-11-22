@@ -56,7 +56,7 @@ class ModelingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         for tank in self.tanksA {
             tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
-            tank.drawHP()
+            tank.drawHP(rotate: false)
             
             for i in 0..<shootCount {
                 let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
@@ -68,7 +68,7 @@ class ModelingViewController: UIViewController {
 
         for tank in self.tanksB {
             tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
-            tank.drawHP()
+            tank.drawHP(rotate: true)
             
             for i in 0..<shootCount {
                 let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
@@ -171,8 +171,8 @@ class ModelingViewController: UIViewController {
 
             y += offset + tank.frame.size.height
             
-            if y > sceneScrollView.bounds.height {
-                contentSizeA = y - sceneScrollView.bounds.height
+            if y + 20 > sceneScrollView.bounds.height {
+                contentSizeA = y - sceneScrollView.bounds.height + 20
             }
         }
 
@@ -187,8 +187,8 @@ class ModelingViewController: UIViewController {
 
             y += offset + tank.frame.size.height
 
-            if y > sceneScrollView.bounds.height {
-                contentSizeB = y - sceneScrollView.bounds.height
+            if y + 25 > sceneScrollView.bounds.height {
+                contentSizeB = y - sceneScrollView.bounds.height + 25
             }
 
         }

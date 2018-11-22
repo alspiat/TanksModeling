@@ -20,18 +20,26 @@ class TankView: UIImageView {
         didSet {
             checkDie()
             HpLabel.text = "\(String(tankHP)) HP"
+            HpLabel.textColor = UIColor.red
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.HpLabel.textColor = UIColor.white
+            }
         }
     }
     var tankRate: Int = 0
     
    
     
-    func drawHP() {
+    func drawHP(rotate: Bool) {
         HpLabel = UILabel(frame: CGRect(x: 15, y: self.image?.size.height ?? 0, width: 30, height: 10))
+        if (rotate) {
+            HpLabel.transform = CGAffineTransform(rotationAngle: (.pi))
+            HpLabel.frame.origin.y = -12
+        }
         HpLabel.textAlignment = .center //For center alignment
         HpLabel.text = "\(String(tankHP)) HP"
         HpLabel.textColor = .white
-        HpLabel.font = UIFont.systemFont(ofSize: 12)
+        HpLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         HpLabel.sizeToFit()//If required
         self.addSubview(HpLabel)
     }
