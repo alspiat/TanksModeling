@@ -37,34 +37,36 @@ class TankView: UIImageView {
             animation.values = pathArray
             animation.duration = 0.2
             
+            //Если тунк живой
+            if self.tankHP > 0 {
+                //Отрисовываем выстрел
+        
+                let frontimgview = UIImageView()
+                frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: 0, width: 30, height: 30)
+                frontimgview.transform = frontimgview.transform.rotated(by: CGFloat(Double.pi / 2)) // сделать поворот пикчи огня
+                frontimgview.animationRepeatCount = 1
+                frontimgview.animationImages = [#imageLiteral(resourceName: "fire")]
+                frontimgview.animationDuration = 0.2
+        
+                self.addSubview(frontimgview)
+                self.layer.add(animation, forKey: shootingAnimationKey)
+                
+                //Выбираем в кого стрелять
+                var maxRate = tanks[0].tankRate
+                var mostDangerousTank = tanks[0]
+                
+                for tank in tanks {
+                    if tank.tankRate > maxRate {
+                        maxRate = tank.tankRate
+                        mostDangerousTank = tank
+                    }
+                }
             
-            //Отрисовываем выстрел
-    
-            let frontimgview = UIImageView()
-            frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: 0, width: 30, height: 30)
-            frontimgview.transform = frontimgview.transform.rotated(by: CGFloat(Double.pi / 2)) // сделать поворот пикчи огня
-            frontimgview.animationRepeatCount = 1
-            frontimgview.animationImages = [#imageLiteral(resourceName: "fire")]
-            frontimgview.animationDuration = 0.2
-            self.addSubview(frontimgview)
-            self.layer.add(animation, forKey: shootingAnimationKey)
-            
-            //Выбираем в кого стрелять
-            var maxRate = tanks[0].tankRate
-            var mostDangerousTank = tanks[0]
-            
-            for tank in tanks {
-                if tank.tankRate > maxRate {
-                    maxRate = tank.tankRate
-                    mostDangerousTank = tank
+                if maxRate > 0 {
+                    mostDangerousTank.tankHP -= 1
+                    frontimgview.startAnimating()
                 }
             }
-        
-            mostDangerousTank.tankHP -= 1
-            frontimgview.startAnimating()
-    
-            
-            
         }
     }
     

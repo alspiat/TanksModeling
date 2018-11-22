@@ -78,6 +78,8 @@ class ModelingViewController: UIViewController {
             var tankName: String
             var tankHP: Int
             var tankRate: Int
+           // var tankShotPower: Double
+           // var tankReloadTime: Double
             
             switch key {
             case "T-34":
