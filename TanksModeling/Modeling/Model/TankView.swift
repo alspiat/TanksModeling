@@ -42,7 +42,7 @@ class TankView: UIImageView {
                 //Отрисовываем выстрел
         
                 let frontimgview = UIImageView()
-                frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: self.layer.bounds.height / 2 - 10, width: 20, height: 20)
+                frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: self.layer.bounds.height / 2 - 12.5, width: 25, height: 25)
                 frontimgview.animationRepeatCount = 1
                 frontimgview.animationImages = [#imageLiteral(resourceName: "fire")]
                 frontimgview.animationDuration = 0.2

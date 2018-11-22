@@ -58,7 +58,7 @@ class ModelingViewController: UIViewController {
             tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
             
             for i in 0..<shootCount {
-                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * i)
+                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
                 DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
                     tank.shoot(animated: true, tanks: self.tanksB)
                 }
@@ -69,7 +69,7 @@ class ModelingViewController: UIViewController {
             tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
             
             for i in 0..<shootCount {
-                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * i)
+                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
                 DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
                     tank.shoot(animated: true, tanks: self.tanksA)
                 }
@@ -138,7 +138,7 @@ class ModelingViewController: UIViewController {
 
     func configureScene(settings: [String: String]) {
         
-        let sceneWidth = max(endPointA, startPointB)
+        let sceneWidth = max(endPointA, startPointB) + 200
         
         if sceneWidth > sceneScrollView.bounds.width {
             sceneWidthConstraint.constant = sceneWidth - sceneScrollView.bounds.width
