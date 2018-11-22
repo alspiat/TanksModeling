@@ -26,6 +26,11 @@ class StepperTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.textLabel?.textColor = #colorLiteral(red: 0.7459739654, green: 0.7577740701, blue: 0.7198926508, alpha: 1)
+        self.countLabel.textColor = #colorLiteral(red: 0.7459739654, green: 0.7577740701, blue: 0.7198926508, alpha: 1)
+        self.tintColor = #colorLiteral(red: 0.231372549, green: 0.231372549, blue: 0.2, alpha: 1)
+        self.backgroundColor = UIColor.clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -37,6 +37,12 @@ extension ArmamentViewController: UITableViewDelegate, UITableViewDataSource {
         return settingHeader
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0.337254902, green: 0.3333333333, blue: 0.2823529412, alpha: 1)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = #colorLiteral(red: 0.7330647111, green: 0.7290506363, blue: 0.6879251003, alpha: 1)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let armamentSettings = settingsModel?.armamentSettings[settingsKey] else {

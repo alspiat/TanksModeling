@@ -18,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-IB-RhM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tc-IB-RhM">
                                 <rect key="frame" x="0.0" y="44" width="736" height="370"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.6470588235294118" green="0.6588235294117647" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTableViewCellIdentifier" id="26f-Lt-AEg" customClass="SettingTableViewCell" customModule="TanksModeling" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="736" height="44"/>
@@ -29,6 +30,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="736" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.2627450980392157" green="0.25882352941176467" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -73,7 +76,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkI-nN-cN0">
                                 <rect key="frame" x="268" y="337.66666666666669" width="200" height="45"/>
-                                <color key="backgroundColor" red="0.33703166246414185" green="0.33289065957069397" blue="0.28346031904220581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.33725490196078434" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="JgH-mK-773"/>
                                     <constraint firstAttribute="height" constant="45" id="RjK-IA-EWe"/>
@@ -131,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJ9-zO-qJt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJ9-zO-qJt">
                                 <rect key="frame" x="0.0" y="44" width="736" height="370"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -144,6 +147,7 @@
                                             <subviews>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="lM5-07-Foo">
                                                     <rect key="frame" x="622" y="18.333333333333329" width="94" height="29"/>
+                                                    <color key="tintColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="stepperValueChanged:" destination="a5t-OB-b1J" eventType="valueChanged" id="Pyu-fa-NEb"/>
                                                     </connections>
@@ -162,6 +166,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="lM5-07-Foo" secondAttribute="trailing" constant="20" id="sgG-KC-CoN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.2882185759" green="0.28472242349999999" blue="0.24354077369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="countLabel" destination="s1m-s1-cMK" id="BHr-3t-ago"/>
                                             <outlet property="countStepper" destination="lM5-07-Foo" id="Jr7-in-W3n"/>
@@ -176,12 +182,14 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1000" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-pu-s1W">
                                                     <rect key="frame" x="573" y="20.333333333333329" width="143" height="24"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.2882185759" green="0.28472242349999999" blue="0.24354077369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="143" id="lrO-9o-AD0"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <action selector="countTextFieldDidChange:" destination="jUl-m4-fse" eventType="editingChanged" id="RLu-cs-9Em"/>
                                                     </connections>
@@ -192,6 +200,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="dB6-pu-s1W" secondAttribute="trailing" constant="20" id="6mQ-Vr-OEp"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.2882185759" green="0.28472242349999999" blue="0.24354077369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="countTextField" destination="dB6-pu-s1W" id="rtK-Tu-chc"/>
                                         </connections>
@@ -316,7 +326,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQk-1A-3yb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQk-1A-3yb">
                                 <rect key="frame" x="0.0" y="44" width="736" height="370"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -366,7 +376,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                                     <connections>
                                                         <action selector="countTextFieldDidChange:" destination="8wi-p5-6Bg" eventType="editingChanged" id="6g3-LF-qMH"/>
                                                     </connections>
@@ -413,6 +423,6 @@
         <image name="tanks" width="2348" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ACB-DX-cdG"/>
+        <segue reference="knk-FB-lfI"/>
     </inferredMetricsTieBreakers>
 </document>
