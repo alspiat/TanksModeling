@@ -57,6 +57,10 @@ class ModelingViewController: UIViewController {
         for tank in self.tanksA {
             tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
         }
+        
+//        for tank in self.tanksA {
+//            tank.shoot(animated: true)
+//        }
 
         for tank in self.tanksB {
             tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
@@ -64,37 +68,58 @@ class ModelingViewController: UIViewController {
     }
     
     @IBAction func shootButton(_ sender: UIBarButtonItem) {
-        tanksA[0].die()
+        tanksA[0].shoot(animated: true, tanks: tanksB)
+        //tanksA[0].die()
     }
     
     func configure(tanks: inout [TankView], with settings: [String: Int]) {
         for (key, value) in settings {
             
             var tankName: String
+            var tankHP: Int
+            var tankRate: Int
             
             switch key {
             case "T-34":
                 tankName = "T-34"
+                tankHP = 3
+                tankRate = 1
             case "Tiger-II":
                 tankName = "Tiger-II"
+                tankHP = 4
+                tankRate = 2
             case "M-6":
                 tankName = "M-6"
+                tankHP = 1
+                tankRate = 3
             case "E-100":
                 tankName = "E-100"
+                tankHP = 5
+                tankRate = 4
             case "KV-2":
                 tankName = "KV-2"
+                tankHP = 2
+                tankRate = 5
             case "VK3601":
                 tankName = "VK3601"
+                tankHP = 2
+                tankRate = 6
             case "Panzerkampfwagen IV-G":
                 tankName = "Panzerkampfwagen IV-G"
+                tankHP = 3
+                tankRate = 7
             case "Panzerkampfwagen IV":
                 tankName = "Panzerkampfwagen IV"
+                tankHP = 4
+                tankRate = 8
             default:
                 continue
             }
             
             for _ in 0..<value {
                 let tank = TankView(image: UIImage(named: tankName))
+                tank.tankHP = tankHP
+                tank.tankRate = tankRate
                 tanks.append(tank)
             }
         }
