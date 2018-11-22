@@ -62,7 +62,6 @@
 				AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */,
 				9ADD1441219ACFB500668263 /* ArmamentViewController.swift */,
 				9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */,
-				9AFFD19321A5433B00F0F2A8 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +85,7 @@
 		AAB7D1F82198555800EB8F40 /* TanksModeling */ = {
 			isa = PBXGroup;
 			children = (
+				9AFFD19321A5433B00F0F2A8 /* WelcomeViewController.swift */,
 				AAB7D20B21985B5D00EB8F40 /* Settings */,
 				AAB7D213219876AF00EB8F40 /* Modeling */,
 				AAB7D1F92198555800EB8F40 /* AppDelegate.swift */,

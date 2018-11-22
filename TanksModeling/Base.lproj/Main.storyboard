@@ -97,7 +97,7 @@
                                     <color key="titleColor" red="0.73306471110000004" green="0.7290506363" blue="0.68792510029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ACB-DX-cdG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segueToModeling" id="ACB-DX-cdG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -423,6 +423,6 @@
         <image name="tanks" width="2348" height="618"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="knk-FB-lfI"/>
+        <segue reference="ACB-DX-cdG"/>
     </inferredMetricsTieBreakers>
 </document>

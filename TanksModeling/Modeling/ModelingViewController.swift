@@ -27,10 +27,10 @@ class ModelingViewController: UIViewController {
     var startPointB: CGFloat = 0
     var endPointB: CGFloat = 0
     
+    let shootCount = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(settingsModel?.armamentSettings)
         
         if let tanksASetting = settingsModel?.armamentSettings["Armament A"]?["Танки"],
             let tanksBSetting = settingsModel?.armamentSettings["Armament B"]?["Танки"],
@@ -56,20 +56,29 @@ class ModelingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         for tank in self.tanksA {
             tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
+            
+            for i in 0..<shootCount {
+                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * i)
+                DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
+                    tank.shoot(animated: true, tanks: self.tanksB)
+                }
+            }
         }
-        
-//        for tank in self.tanksA {
-//            tank.shoot(animated: true)
-//        }
 
         for tank in self.tanksB {
             tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
+            
+            for i in 0..<shootCount {
+                let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * i)
+                DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
+                    tank.shoot(animated: true, tanks: self.tanksA)
+                }
+            }
         }
     }
     
     @IBAction func shootButton(_ sender: UIBarButtonItem) {
         tanksA[0].shoot(animated: true, tanks: tanksB)
-        //tanksA[0].die()
     }
     
     func configure(tanks: inout [TankView], with settings: [String: Int]) {

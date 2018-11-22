@@ -42,14 +42,12 @@ class TankView: UIImageView {
                 //Отрисовываем выстрел
         
                 let frontimgview = UIImageView()
-                frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: 0, width: 30, height: 30)
-                frontimgview.transform = frontimgview.transform.rotated(by: CGFloat(Double.pi / 2)) // сделать поворот пикчи огня
+                frontimgview.frame = CGRect(x: self.layer.bounds.maxX, y: self.layer.bounds.height / 2 - 10, width: 20, height: 20)
                 frontimgview.animationRepeatCount = 1
                 frontimgview.animationImages = [#imageLiteral(resourceName: "fire")]
                 frontimgview.animationDuration = 0.2
         
                 self.addSubview(frontimgview)
-                self.layer.add(animation, forKey: shootingAnimationKey)
                 
                 //Выбираем в кого стрелять
                 var maxRate = tanks[0].tankRate
@@ -65,6 +63,7 @@ class TankView: UIImageView {
                 if maxRate > 0 {
                     mostDangerousTank.tankHP -= 1
                     frontimgview.startAnimating()
+                    self.layer.add(animation, forKey: shootingAnimationKey)
                 }
             }
         }
@@ -91,6 +90,7 @@ class TankView: UIImageView {
     func checkDie() {
         if tankHP <= 0 {
             self.layer.removeAnimation(forKey: movingAnimationKey)
+            self.layer.removeAnimation(forKey: shootingAnimationKey)
             self.layer.position = self.layer.presentation()!.position
             self.alpha = 0.5
             tankRate = 0
