@@ -56,15 +56,14 @@ class ModelingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         for tank in self.tanksA {
             tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
+            tank.drawHP()
         }
-        
-//        for tank in self.tanksA {
-//            tank.shoot(animated: true)
-//        }
 
         for tank in self.tanksB {
             tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
+            tank.drawHP()
         }
+        
     }
     
     @IBAction func shootButton(_ sender: UIBarButtonItem) {
