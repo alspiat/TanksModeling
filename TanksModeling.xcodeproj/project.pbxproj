@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8687280F21A763320084F5CD /* Main.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8687280E21A763320084F5CD /* Main.mp3 */; };
 		9ADD1442219ACFB500668263 /* ArmamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1441219ACFB500668263 /* ArmamentViewController.swift */; };
 		9ADD1444219ACFCA00668263 /* ArmamentViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */; };
 		9ADD1451219AF17B00668263 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADD1450219AF17B00668263 /* SettingsModel.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8687280E21A763320084F5CD /* Main.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Main.mp3; sourceTree = "<group>"; };
 		9ADD1441219ACFB500668263 /* ArmamentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmamentViewController.swift; sourceTree = "<group>"; };
 		9ADD1443219ACFCA00668263 /* ArmamentViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArmamentViewController+TableView.swift"; sourceTree = "<group>"; };
 		9ADD1450219AF17B00668263 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				AAB7D1FD2198555800EB8F40 /* Main.storyboard */,
 				AAB7D2002198555900EB8F40 /* Assets.xcassets */,
 				AAB7D2022198555900EB8F40 /* LaunchScreen.storyboard */,
+				8687280E21A763320084F5CD /* Main.mp3 */,
 				AAB7D2052198555900EB8F40 /* Info.plist */,
 			);
 			path = TanksModeling;
@@ -195,6 +198,7 @@
 				AAB7D2042198555900EB8F40 /* LaunchScreen.storyboard in Resources */,
 				AAB7D2012198555900EB8F40 /* Assets.xcassets in Resources */,
 				AAB7D1FF2198555800EB8F40 /* Main.storyboard in Resources */,
+				8687280F21A763320084F5CD /* Main.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,13 +369,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3L778SRB3;
+				DEVELOPMENT_TEAM = 2977YCYDJ4;
 				INFOPLIST_FILE = TanksModeling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BNTU.TanksModeling;
+				PRODUCT_BUNDLE_IDENTIFIER = BNTU.TanksModeling6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,13 +388,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M3L778SRB3;
+				DEVELOPMENT_TEAM = 2977YCYDJ4;
 				INFOPLIST_FILE = TanksModeling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BNTU.TanksModeling;
+				PRODUCT_BUNDLE_IDENTIFIER = BNTU.TanksModeling6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
