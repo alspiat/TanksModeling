@@ -69,13 +69,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tanks" translatesAutoresizingMaskIntoConstraints="NO" id="jYJ-61-PNh">
-                                <rect key="frame" x="70" y="147.66666666666666" width="596" height="159.99999999999997"/>
+                                <rect key="frame" x="70" y="127" width="596" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jYJ-61-PNh" secondAttribute="height" multiplier="149:40" id="D6M-K0-W8f"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkI-nN-cN0">
-                                <rect key="frame" x="268" y="337.66666666666669" width="200" height="45"/>
+                                <rect key="frame" x="268" y="317" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.33725490196078434" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="JgH-mK-773"/>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seE-vy-JHp">
-                                <rect key="frame" x="268" y="397.66666666666669" width="200" height="45"/>
+                                <rect key="frame" x="268" y="377" width="200" height="45"/>
                                 <color key="backgroundColor" red="0.33703166246414185" green="0.33289065957069397" blue="0.28346031904220581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Моделирование">
@@ -110,7 +110,7 @@
                             <constraint firstItem="TkI-nN-cN0" firstAttribute="top" secondItem="jYJ-61-PNh" secondAttribute="bottom" constant="30" id="SPh-Pj-n1p"/>
                             <constraint firstItem="jYJ-61-PNh" firstAttribute="centerX" secondItem="Aq7-Ew-22C" secondAttribute="centerX" id="TQs-z5-Lzw"/>
                             <constraint firstItem="jYJ-61-PNh" firstAttribute="width" secondItem="jYJ-61-PNh" secondAttribute="height" multiplier="149:40" id="WFZ-KM-JVO"/>
-                            <constraint firstItem="jYJ-61-PNh" firstAttribute="centerY" secondItem="HWv-Nw-fDv" secondAttribute="centerY" multiplier="1.1" id="XPg-18-S8B"/>
+                            <constraint firstItem="jYJ-61-PNh" firstAttribute="centerY" secondItem="HWv-Nw-fDv" secondAttribute="centerY" id="XPg-18-S8B"/>
                             <constraint firstItem="TkI-nN-cN0" firstAttribute="height" secondItem="seE-vy-JHp" secondAttribute="height" id="ZJP-DD-HFh"/>
                             <constraint firstItem="Aq7-Ew-22C" firstAttribute="trailing" secondItem="jYJ-61-PNh" secondAttribute="trailing" constant="70" id="wmA-wm-T58"/>
                         </constraints>

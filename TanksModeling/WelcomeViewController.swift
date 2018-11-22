@@ -18,10 +18,10 @@ class WelcomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        imageCenterYConstraint.constant = -70
+        imageCenterYConstraint.constant = -50
         imageTrailingConstraint.constant = 120
         
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 1.5) {
             self.view.layoutIfNeeded()
         }
     }

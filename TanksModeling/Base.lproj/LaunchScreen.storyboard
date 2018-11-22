@@ -19,25 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tanks" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-NH-VFP">
-                                <rect key="frame" x="70" y="147.66666666666666" width="596" height="159.99999999999997"/>
+                                <rect key="frame" x="70" y="127" width="596" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Iog-NH-VFP" secondAttribute="height" multiplier="149:40" id="tXU-lu-5Sp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка приложения..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w3-7r-va3">
-                                <rect key="frame" x="244.33333333333337" y="112.33333333333333" width="247.66666666666663" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <color key="textColor" red="0.18094596266746521" green="0.11353110522031784" blue="0.0658707395195961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45882352941176469" green="0.48627450980392156" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Iog-NH-VFP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vjb-L0-E7b"/>
-                            <constraint firstItem="4w3-7r-va3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Xl3-zd-DHA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iog-NH-VFP" secondAttribute="trailing" constant="70" id="YBK-qi-Wz1"/>
-                            <constraint firstItem="Iog-NH-VFP" firstAttribute="top" secondItem="4w3-7r-va3" secondAttribute="bottom" constant="10" id="dCV-nD-ks4"/>
-                            <constraint firstItem="Iog-NH-VFP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.1" id="wAC-Ch-vBU"/>
+                            <constraint firstItem="Iog-NH-VFP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wAC-Ch-vBU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
