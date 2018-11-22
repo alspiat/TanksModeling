@@ -29,6 +29,11 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = #colorLiteral(red: 0.4605119824, green: 0.4856187105, blue: 0.4202735126, alpha: 1)
+        settingsTableView.backgroundColor = .clear
+        settingsTableView.tableFooterView = UIView(frame: CGRect.zero)
+        settingsTableView.separatorColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6235294118, alpha: 1)
+        
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
     }

@@ -25,13 +25,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загрузка приложения..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w3-7r-va3">
-                                <rect key="frame" x="256.66666666666669" y="112.33333333333333" width="223" height="25.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="244.33333333333337" y="112.33333333333333" width="247.66666666666663" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="0.18094596266746521" green="0.11353110522031784" blue="0.0658707395195961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.45882352941176469" green="0.48627450980392156" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Iog-NH-VFP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vjb-L0-E7b"/>
                             <constraint firstItem="4w3-7r-va3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Xl3-zd-DHA"/>
