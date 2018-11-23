@@ -21,6 +21,7 @@
 		AAB7D211219875F600EB8F40 /* SettingsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */; };
 		AABAA5442199B52000A036AA /* TankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAA5432199B52000A036AA /* TankView.swift */; };
 		AABAA5482199BDED00A036AA /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABAA5472199BDED00A036AA /* StepperTableViewCell.swift */; };
+		AAD2EB3021A83480006F568C /* TankView+CreatingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2EB2F21A83480006F568C /* TankView+CreatingModels.swift */; };
 		AAF19DB3219EFB38001BFE51 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF19DB2219EFB38001BFE51 /* TextFieldTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		AAB7D210219875F600EB8F40 /* SettingsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TableView.swift"; sourceTree = "<group>"; };
 		AABAA5432199B52000A036AA /* TankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankView.swift; sourceTree = "<group>"; };
 		AABAA5472199BDED00A036AA /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
+		AAD2EB2F21A83480006F568C /* TankView+CreatingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TankView+CreatingModels.swift"; sourceTree = "<group>"; };
 		AAF19DB2219EFB38001BFE51 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				AABAA5432199B52000A036AA /* TankView.swift */,
+				AAD2EB2F21A83480006F568C /* TankView+CreatingModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				AABAA5442199B52000A036AA /* TankView.swift in Sources */,
 				AAB7D20D21985B8100EB8F40 /* SettingTableViewCell.swift in Sources */,
 				9ADD1442219ACFB500668263 /* ArmamentViewController.swift in Sources */,
+				AAD2EB3021A83480006F568C /* TankView+CreatingModels.swift in Sources */,
 				AAB7D1FC2198555800EB8F40 /* ModelingViewController.swift in Sources */,
 				AAF19DB3219EFB38001BFE51 /* TextFieldTableViewCell.swift in Sources */,
 				AAB7D1FA2198555800EB8F40 /* AppDelegate.swift in Sources */,

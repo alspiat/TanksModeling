@@ -13,35 +13,38 @@ class TankView: UIImageView {
     fileprivate let shootingAnimationKey = "shootingAnimation"
     fileprivate let movingAnimationKey = "movingAnimation"
     
+    var healthLabel = UILabel()
 
-    var HpLabel = UILabel()
-    
-    var tankHP: Int = 0 {
+    var rate: Int = 0
+    var armorPenetration: Int = 0 // Бронепробиваемость пушки
+    var armorHealth: Int = 0 {
         didSet {
             checkDie()
-            HpLabel.text = "\(String(tankHP)) HP"
-            HpLabel.textColor = UIColor.red
+            healthLabel.text = "\(String(armorHealth)) HP"
+            healthLabel.textColor = UIColor.red
+            healthLabel.sizeToFit()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.HpLabel.textColor = UIColor.white
+                self.healthLabel.textColor = .white
             }
         }
     }
-    var tankRate: Int = 0
-    
-   
     
     func drawHP(rotate: Bool) {
-        HpLabel = UILabel(frame: CGRect(x: 15, y: self.image?.size.height ?? 0, width: 30, height: 10))
+        healthLabel.text = "\(String(armorHealth)) HP"
+        healthLabel.textColor = .white
+        healthLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        
         if (rotate) {
-            HpLabel.transform = CGAffineTransform(rotationAngle: (.pi))
-            HpLabel.frame.origin.y = -12
+            healthLabel.transform = CGAffineTransform(rotationAngle: (.pi))
+            healthLabel.frame.origin.y -= healthLabel.bounds.height
+            healthLabel.frame.origin.x += 5
+        } else {
+            healthLabel.frame.origin.y = self.bounds.height
+            healthLabel.frame.origin.x += 5
         }
-        HpLabel.textAlignment = .center //For center alignment
-        HpLabel.text = "\(String(tankHP)) HP"
-        HpLabel.textColor = .white
-        HpLabel.font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        HpLabel.sizeToFit()//If required
-        self.addSubview(HpLabel)
+        
+        self.addSubview(healthLabel)
     }
     
     func shoot(animated: Bool, tanks: [TankView]) {
@@ -62,7 +65,7 @@ class TankView: UIImageView {
           
             
             //Если тунк живой
-            if self.tankHP > 0 {
+            if self.armorHealth > 0 {
                 //Отрисовываем выстрел
         
                 let frontimgview = UIImageView()
@@ -74,18 +77,18 @@ class TankView: UIImageView {
                 self.addSubview(frontimgview)
                 
                 //Выбираем в кого стрелять
-                var maxRate = tanks[0].tankRate
+                var maxRate = tanks[0].rate
                 var mostDangerousTank = tanks[0]
                 
                 for tank in tanks {
-                    if tank.tankRate > maxRate {
-                        maxRate = tank.tankRate
+                    if tank.rate > maxRate {
+                        maxRate = tank.rate
                         mostDangerousTank = tank
                     }
                 }
             
                 if maxRate > 0 {
-                    mostDangerousTank.tankHP -= 1
+                    mostDangerousTank.armorHealth -= armorPenetration
                     frontimgview.startAnimating()
                     self.layer.add(animation, forKey: shootingAnimationKey)
                 }
@@ -112,13 +115,13 @@ class TankView: UIImageView {
     
     //Проверяем умер ли  танк, если да, то  обнуляем рейт
     func checkDie() {
-        if tankHP <= 0 {
-            HpLabel.isHidden = true
+        if armorHealth <= 0 {
+            healthLabel.isHidden = true
             self.layer.removeAnimation(forKey: movingAnimationKey)
             self.layer.removeAnimation(forKey: shootingAnimationKey)
             self.layer.position = self.layer.presentation()!.position
             self.alpha = 0.5
-            tankRate = 0
+            rate = 0
         }
     }
 

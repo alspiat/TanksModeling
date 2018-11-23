@@ -21,7 +21,7 @@ class ArmamentViewController: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.4605119824, green: 0.4856187105, blue: 0.4202735126, alpha: 1)
         armamentTableView.backgroundColor = .clear
         armamentTableView.tableFooterView = UIView(frame: CGRect.zero)
-        armamentTableView.separatorColor = #colorLiteral(red: 0.6470588235, green: 0.6588235294, blue: 0.6235294118, alpha: 1)
+        armamentTableView.separatorColor = #colorLiteral(red: 0.5799222601, green: 0.5942060596, blue: 0.5656384606, alpha: 1)
         
         armamentTableView.delegate = self
         armamentTableView.dataSource = self
