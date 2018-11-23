@@ -1,5 +1,5 @@
 //
-//  TankView+Models.swift
+//  TankView+CreatingModels.swift
 //  TanksModeling
 //
 //  Created by Алексей on 11/23/18.
