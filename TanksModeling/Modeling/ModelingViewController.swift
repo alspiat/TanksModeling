@@ -54,31 +54,58 @@ class ModelingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Внизу
+        startModeling()
     }
     
-    @IBAction func shootButton(_ sender: UIBarButtonItem) {
+    func mostDangerousTank(from tanks: [TankView]) -> TankView? {
+        guard tanks.count > 0 else {
+            return nil
+        }
+        
+        //Выбираем в кого стрелять
+        var maxRate = tanks[0].rate
+        var mostDangerousTank = tanks[0]
+        
+        for tank in tanks {
+            if tank.rate > maxRate {
+                maxRate = tank.rate
+                mostDangerousTank = tank
+            }
+        }
+        
+        return mostDangerousTank
+    }
+    
+    func startModeling() {
         for tank in self.tanksA {
-            tank.move(view: tank, to: abs(startPointA - endPointA), animated: true)
+            tank.move(to:  CGPoint(x: endPointA, y: tank.position.y), animated: true)
             
             for i in 0..<shootCount {
                 let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
                 DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
-                    tank.shoot(animated: true, tanks: self.tanksB)
+                    if let mostDangerousTank = self.mostDangerousTank(from: self.tanksB) {
+                        tank.shoot(tank: mostDangerousTank, animated: true)
+                    }
                 }
             }
         }
         
         for tank in self.tanksB {
-            tank.move(view: tank, to: -abs(startPointB - endPointB), animated: true)
+            tank.move(to: CGPoint(x: endPointB, y: tank.position.y), animated: true)
             
             for i in 0..<shootCount {
                 let timeout = DispatchTimeInterval.milliseconds(Int(arc4random_uniform(1000) + 500) * (i + 1))
                 DispatchQueue.main.asyncAfter(deadline: .now() + timeout) {
-                    tank.shoot(animated: true, tanks: self.tanksA)
+                    if let mostDangerousTank = self.mostDangerousTank(from: self.tanksA) {
+                        tank.shoot(tank: mostDangerousTank, animated: true)
+                    }
                 }
             }
         }
+    }
+    
+    @IBAction func shootButton(_ sender: UIBarButtonItem) {
+        //
     }
     
     func configure(tanks: inout [TankView], with settings: [String: Int]) {
@@ -137,7 +164,7 @@ class ModelingViewController: UIViewController {
             sceneScrollView.addSubview(tank)
             tank.frame.origin.x = x
             tank.frame.origin.y = y
-            tank.drawHP(rotate: false)
+            
             y += offset + tank.frame.size.height
             
             if y > sceneScrollView.bounds.height {
@@ -153,7 +180,6 @@ class ModelingViewController: UIViewController {
             tank.frame.origin.x = x - tank.bounds.width
             tank.frame.origin.y = y
             tank.transform = CGAffineTransform(rotationAngle: (.pi))
-            tank.drawHP(rotate: true)
             
             y += offset + tank.frame.size.height
 

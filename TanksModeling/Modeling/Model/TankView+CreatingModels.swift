@@ -9,45 +9,46 @@
 import UIKit
 
 extension TankView {
-    static func tank(name: String, rate: Int, armorHealth: Int, armorPenetration: Int) -> TankView {
+    static func tank(name: String, rate: Int, speed: Double, health: Int, armorPenetration: Int) -> TankView {
         let tank = TankView(image: UIImage(named: name))
         tank.rate = rate
-        tank.armorHealth = armorHealth
+        tank.speed = speed
+        tank.health = health
         tank.armorPenetration = armorPenetration
         
         return tank
     }
     
     static var E100: TankView {
-        return tank(name: "E-100", rate: 2, armorHealth: 25, armorPenetration: 5)
+        return tank(name: "E-100", rate: 2, speed: 50, health: 25, armorPenetration: 5)
     }
     
     static var PanzerkampfwagenIV: TankView {
-        return tank(name: "Panzerkampfwagen IV", rate: 5, armorHealth: 40, armorPenetration: 10)
+        return tank(name: "Panzerkampfwagen IV", rate: 5, speed: 50, health: 40, armorPenetration: 10)
     }
     
     static var PanzerkampfwagenIVG: TankView {
-        return tank(name: "Panzerkampfwagen IV-G", rate: 5, armorHealth: 45, armorPenetration: 15)
+        return tank(name: "Panzerkampfwagen IV-G", rate: 5, speed: 50, health: 45, armorPenetration: 15)
     }
     
     static var VK3601: TankView {
-        return tank(name: "VK3601", rate: 5, armorHealth: 30, armorPenetration: 7)
+        return tank(name: "VK3601", rate: 5, speed: 50, health: 30, armorPenetration: 7)
     }
     
     static var KV2: TankView {
-        return tank(name: "KV-2", rate: 4, armorHealth: 35, armorPenetration: 9)
+        return tank(name: "KV-2", rate: 4, speed: 50, health: 35, armorPenetration: 9)
     }
     
     static var T34: TankView {
-        return tank(name: "T-34", rate: 2, armorHealth: 30, armorPenetration: 8)
+        return tank(name: "T-34", rate: 2, speed: 50, health: 30, armorPenetration: 8)
     }
     
     static var M6: TankView {
-        return tank(name: "M-6", rate: 4, armorHealth: 35, armorPenetration: 10)
+        return tank(name: "M-6", rate: 4, speed: 50, health: 35, armorPenetration: 10)
     }
     
     static var Tiger: TankView {
-        return tank(name: "Tiger-II", rate: 5, armorHealth: 40, armorPenetration: 12)
+        return tank(name: "Tiger-II", rate: 5, speed: 50, health: 40, armorPenetration: 12)
     }
     
     
