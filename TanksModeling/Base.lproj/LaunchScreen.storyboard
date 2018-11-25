@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tanks" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-NH-VFP">
-                                <rect key="frame" x="70" y="127" width="596" height="160"/>
+                                <rect key="frame" x="70" y="136" width="596" height="142"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Iog-NH-VFP" secondAttribute="height" multiplier="149:40" id="tXU-lu-5Sp"/>
+                                    <constraint firstAttribute="width" secondItem="Iog-NH-VFP" secondAttribute="height" multiplier="151:36" id="tXU-lu-5Sp"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tanks" width="2348" height="618"/>
+        <image name="tanks" width="2416" height="575"/>
     </resources>
 </document>
