@@ -54,7 +54,18 @@ class ModelingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        startModeling()
+        //
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.5, animations: {
+            self.configureTanks()
+            self.view.layoutIfNeeded()
+        }, completion: { (success) in
+            if success {
+                self.startModeling()
+            }
+        })
     }
     
     func mostDangerousTank(from tanks: [TankView]) -> TankView? {
@@ -105,7 +116,7 @@ class ModelingViewController: UIViewController {
     }
     
     @IBAction func shootButton(_ sender: UIBarButtonItem) {
-        //
+        startModeling()
     }
     
     func configure(tanks: inout [TankView], with settings: [String: Int]) {
@@ -137,12 +148,6 @@ class ModelingViewController: UIViewController {
 
     func configureScene(settings: [String: String]) {
         
-        let sceneWidth = max(endPointA, startPointB)
-        
-        if sceneWidth > sceneScrollView.bounds.width {
-            sceneWidthConstraint.constant = sceneWidth - sceneScrollView.bounds.width
-        }
-        
         if let landscape = settings["Ландшафт"] {
             sceneBackgroundView.image = UIImage(named: landscape)
         }
@@ -151,42 +156,52 @@ class ModelingViewController: UIViewController {
             let darknessValue = Double(darkness) {
             sceneLightView.alpha = CGFloat(darknessValue)
         }
-
+        
+    }
+    
+    func configureTanks() {
+        
         let offset: CGFloat = 20
+        
+        let sceneWidth = max(endPointA, startPointB, startPointA, endPointB)
+        
+        if sceneWidth > sceneScrollView.bounds.width {
+            sceneWidthConstraint.constant = sceneWidth - sceneScrollView.bounds.width
+        }
         
         var y: CGFloat = offset
         var x: CGFloat = startPointA
         
         var contentSizeA: CGFloat = 0
         var contentSizeB: CGFloat = 0
-
+        
         for tank in tanksA {
             sceneScrollView.addSubview(tank)
             tank.frame.origin.x = x
             tank.frame.origin.y = y
             
-            y += offset + tank.frame.size.height
+            y += tank.height + offset
             
             if y > sceneScrollView.bounds.height {
                 contentSizeA = y - sceneScrollView.bounds.height
             }
         }
-
+        
         y = offset
         x = startPointB
-
+        
         for tank in tanksB {
             sceneScrollView.addSubview(tank)
-            tank.frame.origin.x = x - tank.bounds.width
+            tank.frame.origin.x = x - tank.width
             tank.frame.origin.y = y
             tank.transform = CGAffineTransform(rotationAngle: (.pi))
             
-            y += offset + tank.frame.size.height
-
+            y += tank.height + offset
+            
             if y > sceneScrollView.bounds.height {
                 contentSizeB = y - sceneScrollView.bounds.height
             }
-
+            
         }
         
         sceneHeightConstraint.constant = max(contentSizeA, contentSizeB)

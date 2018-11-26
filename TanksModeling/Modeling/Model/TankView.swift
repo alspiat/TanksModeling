@@ -30,6 +30,12 @@ class TankView: UIImageView {
             healthLabel.frame.origin.y -= (healthLabel.bounds.height + self.bounds.height)
         }
     }
+    var height: CGFloat {
+        return bounds.height + healthLabel.bounds.height
+    }
+    var width: CGFloat {
+        return bounds.width
+    }
     
     override init(image: UIImage?) {
         super.init(image: image)
