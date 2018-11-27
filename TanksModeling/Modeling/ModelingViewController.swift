@@ -84,7 +84,11 @@ class ModelingViewController: UIViewController {
             }
         }
         
-        return mostDangerousTank
+        if maxRate > 0 {
+            return mostDangerousTank
+        } else {
+            return nil
+        }
     }
     
     func startModeling() {
