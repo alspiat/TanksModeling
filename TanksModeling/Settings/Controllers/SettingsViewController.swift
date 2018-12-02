@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController {
              "Утро": "0"]
     ]
     
-    var settingsModel = SettingsModel()
+    var settingsModel: SettingsModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

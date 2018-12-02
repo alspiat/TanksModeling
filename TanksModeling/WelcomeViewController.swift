@@ -13,6 +13,8 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var imageCenterYConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageTrailingConstraint: NSLayoutConstraint!
     
+    var settingsModel = SettingsModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +33,10 @@ class WelcomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToModeling",
             let modelingVC = segue.destination as? ModelingViewController {
-            modelingVC.settingsModel = SettingsModel()
+            modelingVC.settingsModel = settingsModel
+        } else if segue.identifier == "segueToSettings",
+            let settingsVC = segue.destination as? SettingsViewController {
+            settingsVC.settingsModel = settingsModel
         }
     }
 

@@ -40,8 +40,8 @@ class ModelingViewController: UIViewController {
             let startPointB = settingsModel?.armamentSettings["Armament B"]?["Начальный рубеж"]?["X"],
             let endPointB = settingsModel?.armamentSettings["Armament B"]?["Конечный рубеж"]?["X"] {
             
-            self.configure(tanks: &tanksA, with: tanksASetting)
-            self.configure(tanks: &tanksB, with: tanksBSetting)
+            self.setup(tanks: &tanksA, with: tanksASetting)
+            self.setup(tanks: &tanksB, with: tanksBSetting)
             
             self.startPointA = CGFloat(startPointA)
             self.startPointB = CGFloat(startPointB)
@@ -51,10 +51,6 @@ class ModelingViewController: UIViewController {
             self.configureScene(settings: settings)
         }
 
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -119,11 +115,34 @@ class ModelingViewController: UIViewController {
         }
     }
     
-    @IBAction func shootButton(_ sender: UIBarButtonItem) {
-        startModeling()
+    @IBAction func repeatButton(_ sender: UIBarButtonItem) {
+        if let tanksASetting = settingsModel?.armamentSettings["Armament A"]?["Танки"],
+            let tanksBSetting = settingsModel?.armamentSettings["Armament B"]?["Танки"] {
+            
+            for tank in tanksA {
+                tank.removeFromSuperview()
+            }
+            for tank in tanksB {
+                tank.removeFromSuperview()
+            }
+            
+            self.tanksA.removeAll()
+            self.tanksB.removeAll()
+            
+            self.setup(tanks: &tanksA, with: tanksASetting)
+            self.setup(tanks: &tanksB, with: tanksBSetting)
+        }
+        
+        UIView.animate(withDuration: 1.5, animations: {
+            self.configureTanks()
+        }, completion: { (success) in
+            if success {
+                self.startModeling()
+            }
+        })
     }
     
-    func configure(tanks: inout [TankView], with settings: [String: Int]) {
+    func setup(tanks: inout [TankView], with settings: [String: Int]) {
         for (key, value) in settings {
             for _ in 0..<value {
                 switch key {

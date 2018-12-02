@@ -38,7 +38,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier) as! SettingTableViewCell
         
-        cell.accessoryType = settingsModel.sceneSettings[settingHeader] == settingValue ? .checkmark : .none
+        cell.accessoryType = settingsModel?.sceneSettings[settingHeader] == settingValue ? .checkmark : .none
         cell.textLabel?.text = settingTitle
         
         return cell
@@ -52,7 +52,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let settingTitle = settingsDict[settingHeader]?.keys.sorted()[indexPath.row]
         let settingValue = settingsDict[settingHeader]![settingTitle!]
         
-        settingsModel.sceneSettings[settingHeader] = settingValue
+        settingsModel?.sceneSettings[settingHeader] = settingValue
         
         tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
         

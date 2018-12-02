@@ -75,22 +75,18 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkI-nN-cN0">
-                                <rect key="frame" x="268" y="308" width="200" height="45"/>
+                                <rect key="frame" x="245.33333333333331" y="308" width="245.33333333333331" height="46"/>
                                 <color key="backgroundColor" red="0.33725490196078434" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="JgH-mK-773"/>
-                                    <constraint firstAttribute="height" constant="45" id="RjK-IA-EWe"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Настройки">
                                     <color key="titleColor" red="0.73306471109390259" green="0.72905063629150391" blue="0.68792510032653809" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cpI-Ql-Zhh" kind="show" id="rL3-Wo-Q7l"/>
+                                    <segue destination="cpI-Ql-Zhh" kind="show" identifier="segueToSettings" id="rL3-Wo-Q7l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seE-vy-JHp">
-                                <rect key="frame" x="268" y="368" width="200" height="45"/>
+                                <rect key="frame" x="245.33333333333331" y="369" width="245.33333333333331" height="46"/>
                                 <color key="backgroundColor" red="0.33703166246414185" green="0.33289065957069397" blue="0.28346031904220581" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Моделирование">
@@ -106,6 +102,8 @@
                             <constraint firstItem="seE-vy-JHp" firstAttribute="centerX" secondItem="TkI-nN-cN0" secondAttribute="centerX" id="0Gu-Tt-drT"/>
                             <constraint firstItem="seE-vy-JHp" firstAttribute="top" secondItem="TkI-nN-cN0" secondAttribute="bottom" constant="15" id="4Xa-QN-HzG"/>
                             <constraint firstItem="TkI-nN-cN0" firstAttribute="width" secondItem="seE-vy-JHp" secondAttribute="width" id="6in-Jl-zXL"/>
+                            <constraint firstItem="TkI-nN-cN0" firstAttribute="width" secondItem="HWv-Nw-fDv" secondAttribute="width" multiplier="1:3" id="Aae-lc-cXp"/>
+                            <constraint firstItem="TkI-nN-cN0" firstAttribute="height" secondItem="HWv-Nw-fDv" secondAttribute="height" multiplier="1:9" id="NmU-8O-kBH"/>
                             <constraint firstItem="TkI-nN-cN0" firstAttribute="centerX" secondItem="Aq7-Ew-22C" secondAttribute="centerX" id="PPT-4E-aWI"/>
                             <constraint firstItem="TkI-nN-cN0" firstAttribute="top" secondItem="jYJ-61-PNh" secondAttribute="bottom" constant="30" id="SPh-Pj-n1p"/>
                             <constraint firstItem="jYJ-61-PNh" firstAttribute="centerX" secondItem="Aq7-Ew-22C" secondAttribute="centerX" id="TQs-z5-Lzw"/>
@@ -276,9 +274,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Моделирование" id="jV8-xI-BzE">
-                        <barButtonItem key="rightBarButtonItem" title="Shoot" id="Hrw-jS-OIO">
+                        <barButtonItem key="rightBarButtonItem" title="Повторить" id="Hrw-jS-OIO">
                             <connections>
-                                <action selector="shootButton:" destination="BYZ-38-t0r" id="1C8-hp-8UL"/>
+                                <action selector="repeatButton:" destination="BYZ-38-t0r" id="1C8-hp-8UL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
